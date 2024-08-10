@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
+
 const GoogleMap = () => {
   useEffect(() => {
     // Check if window is defined (i.e., we are in the browser)

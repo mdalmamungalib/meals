@@ -1,9 +1,17 @@
 // src/app/contact/page.js
 
-import GoogleMap from '@/components/GoogleMap';
-import Image from 'next/image';
+import GoogleMap from "@/components/GoogleMap";
+import Image from "next/image";
 
-const ContactPage = () => {
+import dynamic from "next/dynamic";
+
+const ContactPage = async () => {
+  const GoogleMap = dynamic(
+    () => import("@/components/GoogleMap"),
+    {
+      ssr: false,
+    }
+  );
   return (
     <div className="min-h-screen bg-gray-100 text-black pt-10">
       {/* Hero Section */}
@@ -19,8 +27,13 @@ const ContactPage = () => {
           />
         </div>
         <div className="container mx-auto relative z-10 text-center">
-          <h1 className="text-5xl font-extrabold mb-4">Contact Us</h1>
-          <p className="text-xl mb-8">We'd love to hear from you. Reach out to us using the form below or via our contact details.</p>
+          <h1 className="text-5xl font-extrabold mb-4">
+            Contact Us
+          </h1>
+          <p className="text-xl mb-8">
+            We'd love to hear from you. Reach out to us using the
+            form below or via our contact details.
+          </p>
         </div>
       </section>
 
@@ -31,10 +44,17 @@ const ContactPage = () => {
             <div className="md:flex">
               {/* Contact Form */}
               <div className="w-full md:w-1/2 p-6">
-                <h2 className="text-3xl font-bold mb-6">Send Us a Message</h2>
+                <h2 className="text-3xl font-bold mb-6">
+                  Send Us a Message
+                </h2>
                 <form className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Name
+                    </label>
                     <input
                       type="text"
                       id="name"
@@ -44,7 +64,12 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Email
+                    </label>
                     <input
                       type="email"
                       id="email"
@@ -54,7 +79,12 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Message
+                    </label>
                     <textarea
                       id="message"
                       name="message"
@@ -74,14 +104,18 @@ const ContactPage = () => {
 
               {/* Contact Information */}
               <div className="w-full md:w-1/2 p-6 bg-gray-50">
-                <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
+                <h2 className="text-3xl font-bold mb-6">
+                  Contact Information
+                </h2>
                 <p className="text-lg text-gray-700 mb-4">
-                  Feel free to reach out to us through any of the following methods:
+                  Feel free to reach out to us through any of the
+                  following methods:
                 </p>
                 <div className="mb-4">
                   <h3 className="text-xl font-semibold">Address</h3>
                   <p className="text-gray-600">
-                    123 Business Ave, Suite 456<br />
+                    123 Business Ave, Suite 456
+                    <br />
                     New York, NY 10001
                   </p>
                 </div>
@@ -91,14 +125,37 @@ const ContactPage = () => {
                 </div>
                 <div className="mb-4">
                   <h3 className="text-xl font-semibold">Email</h3>
-                  <p className="text-gray-600">contact@yourcompany.com</p>
+                  <p className="text-gray-600">
+                    contact@yourcompany.com
+                  </p>
                 </div>
                 <div className="mb-4">
-                  <h3 className="text-xl font-semibold">Social Media</h3>
+                  <h3 className="text-xl font-semibold">
+                    Social Media
+                  </h3>
                   <p className="text-gray-600">
-                    <a href="https://twitter.com/yourcompany" className="text-teal-500 hover:underline">Twitter</a> | 
-                    <a href="https://facebook.com/yourcompany" className="text-teal-500 hover:underline"> Facebook</a> |
-                    <a href="https://linkedin.com/company/yourcompany" className="text-teal-500 hover:underline"> LinkedIn</a>
+                    <a
+                      href="https://twitter.com/yourcompany"
+                      className="text-teal-500 hover:underline"
+                    >
+                      Twitter
+                    </a>{" "}
+                    |
+                    <a
+                      href="https://facebook.com/yourcompany"
+                      className="text-teal-500 hover:underline"
+                    >
+                      {" "}
+                      Facebook
+                    </a>{" "}
+                    |
+                    <a
+                      href="https://linkedin.com/company/yourcompany"
+                      className="text-teal-500 hover:underline"
+                    >
+                      {" "}
+                      LinkedIn
+                    </a>
                   </p>
                 </div>
               </div>
@@ -111,9 +168,11 @@ const ContactPage = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <h2 className="text-3xl font-bold text-center mb-6">Find Us</h2>
+            <h2 className="text-3xl font-bold text-center mb-6">
+              Find Us
+            </h2>
             <div className="relative w-full h-96">
-              <GoogleMap/>
+              <GoogleMap />
             </div>
           </div>
         </div>
@@ -122,9 +181,12 @@ const ContactPage = () => {
       {/* Call to Action Section */}
       <section className="bg-teal-500 text-white py-16">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Get in Touch with Us</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            Get in Touch with Us
+          </h2>
           <p className="text-lg mb-8">
-            Have any questions or need assistance? Don't hesitate to contact us.
+            Have any questions or need assistance? Don't hesitate to
+            contact us.
           </p>
           <button className="bg-white text-teal-500 px-6 py-3 rounded-md shadow-md hover:bg-gray-100 transition duration-300">
             Contact Us
