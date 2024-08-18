@@ -1,9 +1,11 @@
-// src/app/contact/page.js
-
-import GoogleMap from "@/components/GoogleMap";
 import Image from "next/image";
-
 import dynamic from "next/dynamic";
+
+export const metadata = {
+  title: "Contact Us",
+  description: "Discover our contact information",
+  keywords: ["contact", "information", "company"],
+};
 
 const ContactPage = async () => {
   const GoogleMap = dynamic(
