@@ -17,7 +17,7 @@ const Signup = () => {
       image,
       type,
     };
-    const res = await fetch("http://localhost:3000/api/auth/signup/new-user", {
+    const res = await fetch("https://meals-black.vercel.app/api/auth/signup/new-user", {
       body: JSON.stringify(newUser),
       method: "POST",
       headers: { "Content-Type": "application/json" },
